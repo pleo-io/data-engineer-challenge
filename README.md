@@ -47,7 +47,8 @@ events (`etl`). It also spawns a PostgreSQL database that will act as our
 
 - It should be clear how to run the project from this README. If you change things 
 that would alter what is needed to run the project, remember to update this README 
-file to ensure that the steps required to do so are up-to-date.
+file to ensure that the steps required to do so are up-to-date. Unchanged, we will
+expect to be able to see you have solved the task by simply running `./rerun.sh`.
 
 - You may improve and modify *any* part of the project, as long as the ETL 
 service functions to process and move events from sources into a Data Warehouse.
