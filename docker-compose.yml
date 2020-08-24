@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  dwh:
+    container_name: dwh
+    image: postgres:11-alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: always
+    env_file:
+      - database.env
+
+  etl:
+    container_name: etl_service
+    depends_on:
+      - dwh
+    command: ["./wait-for-it.sh", "dwh:5432", "--", "python", "main.py"]
+    image: data-eng-challenge/etl:latest
+    build: 
+      context: ./etl
+
+  users:
+    container_name: users_service
+    volumes:
+      - ./data/events/inbox/users:/app/events
+      - ./data/logs/users:/app/logs
+    depends_on:
+      - dwh
+    image: data-eng-challenge/users:latest
+    build: 
+      context: ./users
+      dockerfile: ../Dockerfile
+
+  cards:
+    container_name: cards_service
+    volumes:
+      - ./data/events/inbox/cards:/app/events
+      - ./data/logs/cards:/app/logs
+    depends_on:
+      - dwh
+    image: data-eng-challenge/cards:latest
+    build: 
+      context: ./cards
+      dockerfile: ../Dockerfile
+
+volumes:
+  db_data:
