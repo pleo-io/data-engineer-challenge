@@ -1,5 +1,5 @@
 autopep8==1.5.3
-Faker==4.1.1
+Faker==12.1.0
 importlib-metadata==1.7.0
 mccabe==0.6.1
 pycodestyle==2.6.0
