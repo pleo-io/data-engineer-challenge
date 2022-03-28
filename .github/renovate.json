@@ -2,5 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>pleo-io/renovate-config"
-  ]
+  ],
+  "schedule": ["every monday"],
+  "automerge": false
 }
