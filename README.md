@@ -1,3 +1,5 @@
+# Old Challenge for Data Engineers. This repo is archived as the interview process has changed.
+
 # Stewards: @team-poseidon
 https://linear.app/pleo/project/stewards-data-engineer-challenge-3d3054f515cb
 
