@@ -1,5 +1,4 @@
 # Stewards: @alathon (Martin Grunbaum)
-https://linear.app/pleo/project/stewards-data-engineer-challenge-3d3054f515cb
 
 # Welcome!
 This repository houses the Pleo Data Engineer challenge. It contains a mix of
